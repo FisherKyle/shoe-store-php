@@ -39,12 +39,15 @@
             $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
         }
 
-        function addBrand() {
-
+        function acquireBrand($new_brand) {
+            $GLOBALS['DB']->exec("INSERT INTO brands_stores (store_id, brand_id) VALUES ({$new_brand->getId()}, {$this->getId()});");
         }
 
         function getBrands() {
+            $collected_brands = $GLOBALS['DB']->query("SELECT brands.* FROM stores)
+            $brands = array();
 
+            return $brands;
         }
     }
  ?>
