@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpunit/phpunit": "4.8",
+        "silex/silex": "~2.0",
+        "twig/twig": "~1.24.1"
+    }
+}
