@@ -1,0 +1,30 @@
+.jumbotron {
+  text-align: center;
+  border-radius: 30px;
+  margin: 4%;
+  background-image: url("http://cdn.wallpapersafari.com/22/14/FQXZEe.jpg")
+}
+
+body {
+  background-color: #101010;
+}
+
+h1, h2, h3, h4, h5, h6, .btn, label, a {
+  font-family: "Anton", sans-serif;
+  color: #201020;
+}
+
+a {
+  color: #000505;
+  font-size: 1.5em;
+}
+
+.btn {
+  font-size: 1.3em;
+  margin: 1%;
+}
+
+li {
+  color: white;
+  font-size: 2em;
+}

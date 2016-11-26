@@ -3,7 +3,8 @@
 
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <title>MANY STORES to MANY BRANDS</title>
   </head>
@@ -11,17 +12,17 @@
   <body>
       <div class="jumbotron">
 
-          <a href="/"><button type="button" class="btn btn-xs btn-default">return</button></a>
+        <h2>name of brand :</h2>
 
           <form action="/new_brand" method="post">
-          
               <div class="form-group">
-                  <label for="name">new brand name:</labeL>
+                  <label for="name"></label>
                   <input type="text" name="name" class="form-control">
-              </div>
 
-              <button type="submit" class="btn btn-primary">save brand</button>
+              <button type="submit" class="btn btn-xs btn-primary">save brand</button>
+            </div>
           </form>
+          <a href="/"><button type="button" class="btn btn-xs btn-default" id="home">return</button></a>
       </div>
   </body>
 </html>

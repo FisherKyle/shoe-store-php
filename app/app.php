@@ -28,7 +28,7 @@
     // STORE FUNCTIONS //
 
     $app->get("/create_store", function() use($app) {
-        return $app['twig']->render('create_store.html.twig', array('stores' => Store::getAll(), 'brands' => Brand::getAll()));
+        return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll(), 'brands' => Brand::getAll()));
     });
 
     $app->post("/new_store", function() use($app) {
@@ -67,10 +67,30 @@
         return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => Brand::getAll()));
     });
 
+    $app->delete("/clear_stores", function($id) use($app) {
+        $stores_array = [];
+        $stores_array = Store::getAll();
+        return $app['twig']->render('index.html.twig', array('stores' => Store::deleteAll(),  'brands' => Brand::getAll()));
+    });
+
+    $app->post("/clear_stores", function() use($app) {
+        return $app['twig']->render('index.html.twig', array('stores' => Store::getAll(), 'brands' => Brand::deleteAll()));
+    });
+
 // BRAND FUNCTIONS //
 
     $app->get("/create_brand", function() use($app) {
         return $app['twig']->render('create_brand.html.twig');
+    });
+
+    $app->delete("/clear_brands", function($id) use($app) {
+        $brands_array = [];
+        $brands_array = Brand::getAll();
+        return $app['twig']->render('index.html.twig', array('brands' => Brand::deleteAll(),  'store' => Store::getAll()));
+    });
+
+    $app->post("/clear_brands", function() use($app) {
+        return $app['twig']->render('index.html.twig', array('brands' => Brand::getAll(), 'stores' => Store::deleteAll()));
     });
 
     $app->post("/new_brand", function() use($app) {
