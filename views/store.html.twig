@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>MANY STORES to MANY BRANDS</title>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+
+      <h3>{{store.getName}}</h3>
+
+      <div class="row">
+        <div class="col-xs-2">
+
+          <a href="/store/{{store.getId}}/delete" id="delete">
+            <h4>delete store</h4>
+          </a>
+
+          <a href="/store/{{store.getId}}/edit" id="edit">
+            <h4>edit store</h4>
+          </a>
+        </div>
+
+        <div class="col-xs-10">
+
+          {% if brands is not empty %}
+
+            <h4>brands carried by this store:</h4>
+
+              {% for brand in brands %}
+                <a href="/brand/{{brand.getId}}">
+                  <h3>{{brand.getName}}</h3>
+                </a>
+              {% endfor %}
+
+          {% endif %}
+
+        </div>
+      </div>
+</html>
