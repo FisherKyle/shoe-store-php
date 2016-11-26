@@ -27,7 +27,7 @@
                 $new_brand = new Brand($name, $id);
                 array_push($brands, $new_brand);
             }
-            
+
             return $brands;
         }
 
@@ -42,6 +42,22 @@
 
         static function clearBrands() {
           $GLOBALS['DB']->exec("DELETE FROM brands;");
+        }
+
+        static function find($search_id) {
+
+            $found_brand = null;
+            $brands = Brand::getAll();
+            
+            foreach($brands as $brand)
+            {
+                $brand_id = $brand->getId();
+                if($brand_id = $searh_id)
+                {
+                    $found_brand = $brand;
+                }
+            }
+            return $found_brand;
         }
 
 
