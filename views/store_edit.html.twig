@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
     <meta charset="utf-8">
     <title>MANY STORES to MANY BRANDS</title>
   </head>
@@ -11,11 +9,15 @@
   <body>
     <div class="jumbotron">
 
-      <h2>MANY SHOE STORES with MANY BRANDS!</h2>
+      <h2>update {{store.getName}}</h2>
 
-      <h4><a href="/stores">view stores</a></h4>
+      <form action="/stores/{{store.getId}}" method="post">
 
-      <h4><a href="/brands">view brands</a></h4>
+        <input name="_method" type="hidden" value="patch">
+        <label for="name">new name for store:</label>
+        <input id="name" type="text" name="new_store_name">
 
-  </body>
+        <button type="submit" class="btn btn-sm btn-success">save store name</button>
+
+      </form>
 </html>
