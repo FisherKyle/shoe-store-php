@@ -10,23 +10,18 @@
   <body>
     <div class="jumbotron">
 
-      <h3>list of all stores</h3>
+      <a href="/"><button type="button" class="btn btn-xs btn-default">return</button></a>
 
-      {% if stores is not empty %}
+      <h4>stores : add to list</h4>
 
-        {% for store in stores %}
-          <a href="/store/{{store.getId}}"><h3>{{store.getName}}</h3></a>
-        {% endfor %}
+        <form action="/new_store" method="post">
+          <div class="form-group">
+            <label for="name">name of store : </labeL>
+              <input type="text" name="name" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-xs btn-default">save store</button>
+        </form>
 
-      {% endif %}
-
-      <h4>add new store: </h4>
-
-      <form action="/stores" method="post">
-
-        <label for="name">name of store:</label>
-        <input id="name" type="text" name="store_name">
-        <button type="submit" class="btn btn-sm btn-success">save store</button>
-
-      </form>
+    </div>
+  </body>
 </html>

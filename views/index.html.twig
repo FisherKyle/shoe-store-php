@@ -9,13 +9,37 @@
   </head>
 
   <body>
+
     <div class="jumbotron">
 
-      <h2>MANY SHOE STORES with MANY BRANDS!</h2>
+      <a href="/"><button type="button" class="btn btn-xs btn-default">return</button></a>
 
-      <h4><a href="/stores">view stores</a></h4>
+      <h4>stores</h4>
 
-      <h4><a href="/brands">view brands</a></h4>
+      <a href="/create_store"><button class="btn btn-xs btn-default">add store</button></a>
+      <a href="/clear_stores"><button class="btn btn-xs btn-danger">remove all stores</button></a>
 
-  </body>
-</html>
+      {% for store in stores %}
+
+        <p><a href="/store/{{store.getId}}">{{store.getName}}</a>
+
+        <form action="/store/{{store.getId}}/delete" method="post">
+          <input name="_method" type="hidden" value="delete">
+          <button type="submit">remove store</button>
+        </form></p>
+
+      {% endfor %}
+
+
+      <h4>brands</h4>
+      <hr>
+      <a href="/create_brand"><button class="btn btn-xs btn-default">add brand</button></a>
+      <a href="/clear_brands"><button class="btn btn-xs btn-danger">remove all brands</button></a>
+      <br><br>
+
+      {% for brand in brands %}
+      <p><a href="/brand/{{brand.getId}}">{{brand.getName}}</a></p>
+      {% endfor %}
+
+    </body>
+  </html>

@@ -8,37 +8,33 @@
   </head>
 
   <body>
-
     <div class="jumbotron">
 
-      <h3>{{store.getName}}</h3>
+      <a href="/"><button type="button" class="btn btn-xs btn-default">return</button></a>
 
-      <div class="row">
-        <div class="col-xs-2">
+      <h4>stores : add to list</h4>
 
-          <a href="/store/{{store.getId}}/delete">
-            <h4>delete store</h4>
-          </a>
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+          <a href="/store/{{store.getId}}/edit"><h3>edit {{store.getName}}</h3></a>
+      </button>
 
-          <a href="/store/{{store.getId}}/edit">
-            <h4>edit store</h4>
-          </a>
-        </div>
+      <form action="/store/{{store.getId}}/added_brand" method="post">
 
-        <div class="col-xs-10">
+        <select name="brand_id">
 
-          {% if brands is not empty %}
+            {% for brand in brands %}
+            <option value="{{brand.getId}}">{{brand.getName}}</option>
+            {% endfor %}
 
-            <h4>brands carried by this store:</h4>
+        </select>
 
-              {% for brand in brands %}
-                <a href="/brand/{{brand.getId}}">
-                  <h3>{{brand.getName}}</h3>
-                </a>
-              {% endfor %}
+        <button type="submit" class="btn btn-xs btn-default ">save brand</button>
+      </form>
 
-          {% endif %}
-
-        </div>
-      </div>
+      {% for brand in store.getBrands %}
+          <li>{{brand.getName}}</li>
+      {% endfor %}
+      
+    </div>
+  </body>
 </html>

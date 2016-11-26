@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>MANY STORES to MANY BRANDS</title>
+  </head>
+
+  <body>
+      <div class="jumbotron">
+
+          <a href="/"><button type="button" class="btn btn-xs btn-default">return</button></a>
+
+          <h3>Stores selling {{brand.getName}} :</h3>
+
+          <form action="/brand/{{brand.getId}}/added_store" method="post">
+
+              <select name="store_id">
+                  {% for store in stores %}
+                  <option value="{{store.getId}}">{{store.getName}}</option>
+                  {% endfor %}
+              </select>
+
+              <button type="submit" class="btn btn-xs btn-default">enter</button>
+          </form>
+
+          <h3>
+            {% for store in brand.getStores %}
+                <li>{{store.getName}}</li>
+            {% endfor %}
+          </h3>
+          
+      </div>
+  </body>
+</html>
