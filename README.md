@@ -1,6 +1,6 @@
 ## PHP Shoe Store 11-25-16
 
-
+![sample screenshot](shoeStore.png)
 
 ##### _by kyle fisher_
 ___

@@ -1,17 +1,19 @@
 .jumbotron {
   text-align: center;
+  border: 1px solid white;
   border-radius: 30px;
   margin: 4%;
-  background-image: url("http://cdn.wallpapersafari.com/22/14/FQXZEe.jpg")
+  background-image: url("http://cdn.wallpapersafari.com/22/14/FQXZEe.jpg");
+  max-width: 965px;
 }
 
 body {
-  background-color: #101010;
+  background-color: #202030;
 }
 
 h1, h2, h3, h4, h5, h6, .btn, label, a {
   font-family: "Anton", sans-serif;
-  color: #201020;
+  color: #100510;
 }
 
 a {
